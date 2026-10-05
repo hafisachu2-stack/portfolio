@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hafis K | Software Developer</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        .list {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            background-color: black;
+            padding: 15px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .list h1 {
+            color: white;
+            font-family: sans-serif;
+            font-size: 30px;
+            font-weight: 700;
+            text-shadow: 2px 2px 2px rgb(77, 38, 38);
+            margin: 0;
+        }
+
+        .list a {
+            color: white;
+            text-decoration: none;
+            font-family: monospace;
+            font-size: 17px;
+            transition: 0.3s;
+        }
+
+        .list a:hover {
+            color: #00ffff;
+        }
+
+        /* ================= HOME ================= */
+
+        .main {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            padding: 80px 100px;
+            background-color: rgb(5, 4, 43);
+            color: white;
+            min-height: 90vh;
+        }
+
+        .a {
+            width: 50%;
+        }
+
+        .a h1 {
+            font-family: monospace;
+            margin-bottom: 20px;
+        }
+
+        .a h1:first-child {
+            color: #00ffff;
+        }
+
+        .b {
+            width: 40%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .b img {
+            width: 350px;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid white;
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+        }
+
+        /* ================= ABOUT ================= */
+
+        .about {
+            background-color: rgb(12, 11, 35);
+            padding: 80px 10%;
+            color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: monospace;
+            margin-bottom: 40px;
+            font-size: 40px;
+        }
+
+        .about p {
+            font-size: 17px;
+            line-height: 2;
+            text-align: justify;
+        }
+
+        /* ================= EDUCATION ================= */
+
+        .education {
+            background-color: rgb(5, 4, 43);
+            padding: 80px 10%;
+            color: white;
+        }
+
+        .education-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .education-card {
+            width: 450px;
+            padding: 40px;
+            border: 2px solid white;
+            border-radius: 20px;
+            background-color: rgba(255, 255, 255, 0.03);
+            transition: 0.3s;
+        }
+
+        .education-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.15);
+        }
+
+        .education-card h2 {
+            font-family: monospace;
+            color: #00ffff;
+        }
+
+        .education-card p {
+            font-size: 18px;
+            margin-top: 15px;
+        }
+
+        /* ================= EXPERIENCE ================= */
+
+        .experience {
+            background-color: rgb(12, 11, 35);
+            padding: 80px 10%;
+            color: white;
+        }
+
+        .experience-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .experience-image img {
+            width: 450px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        .experience-content {
+            max-width: 450px;
+        }
+
+        .experience-content h2 {
+            color: #00ffff;
+            font-family: monospace;
+            margin-bottom: 20px;
+        }
+
+        .experience-content h3 {
+            font-family: monospace;
+        }
+
+        /* ================= SKILLS ================= */
+
+        .skills {
+            background-color: rgb(5, 4, 43);
+            padding: 80px 10%;
+            min-height: 70vh;
+            color: white;
+        }
+
+        .skills-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .skill-card {
+            width: 200px;
+            height: 190px;
+            border: 2px solid white;
+            border-radius: 20px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            color: white;
+            background-color: rgba(255, 255, 255, 0.03);
+
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            background-color: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+        }
+
+        .skill-card i {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        .skill-card h3 {
+            font-family: monospace;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        /* Python */
+
+        .python-icon {
+            color: #3776AB;
+        }
+
+        /* React */
+
+        .react-icon {
+            color: #61DAFB;
+        }
+
+        /* Django */
+
+        .django-icon {
+            color: #44B78B;
+        }
+
+        /* MySQL */
+
+        .mysql-icon {
+            color: #00758F;
+        }
+
+        /* AJAX */
+
+        .ajax-icon {
+            color: #00ffff;
+        }
+
+        /* AI */
+
+        .ai-icon {
+            color: #ff9800;
+        }
+
+        /* Machine Learning */
+
+        .ml-icon {
+            color: #9c27b0;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        footer p {
+            margin: 0;
+            font-family: monospace;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 768px) {
+
+            .list {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .main {
+                flex-direction: column;
+                text-align: center;
+                padding: 60px 20px;
+            }
+
+            .a,
+            .b {
+                width: 100%;
+            }
+
+            .a {
+                margin-bottom: 40px;
+            }
+
+            .b img {
+                width: 280px;
+                height: 280px;
+            }
+
+            .about,
+            .education,
+            .experience,
+            .skills {
+                padding: 60px 20px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .experience-image img {
+                width: 100%;
+                height: auto;
+            }
+
+            .education-card {
+                width: 100%;
+            }
+
+            .skill-card {
+                width: 160px;
+                height: 170px;
+            }
+
+            .skill-card i {
+                font-size: 50px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <div class="list">
+
+        <h1>HAFIS.K</h1>
+
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+
+    </div>
+
+
+    <!-- ================= HOME ================= -->
+
+    <section class="main" id="home">
+
+        <div class="a">
+
+            <h1>Hello</h1>
+
+            <h1>I Am Software Developer</h1>
+
+            <p>
+                Python | Django | React.js | MySQL | AI | Machine Learning
+            </p>
+
+        </div>
+
+        <div class="b">
+
+            <img src="./hafis-removebg-preview.png"
+                alt="Hafis">
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section class="about" id="about">
+
+        <h1 class="section-title">
+            About Me
+        </h1>
+
+        <p>
+            Hi, I'm Hafis, a passionate and motivated developer from
+            Thamarassery, Kozhikode, Kerala. I have completed my Bachelor
+            of Computer Applications (BCA) from the University of Calicut
+            (2023–2026).
+        </p>
+
+        <p>
+            I am interested in software development, web development,
+            and Artificial Intelligence & Machine Learning. I have
+            developed skills in Python, Django, React.js, MySQL, AJAX,
+            AI, and Machine Learning, which allow me to work across both
+            frontend and backend development.
+        </p>
+
+        <p>
+            I enjoy building responsive and user-friendly web applications
+            and solving real-world problems through technology. I am
+            particularly interested in developing applications using
+            Python and Django for the backend and React.js for the
+            frontend, while using MySQL for database management.
+        </p>
+
+        <p>
+            I am a quick learner, a problem solver, and someone who enjoys
+            exploring new technologies. I am looking forward to starting
+            my professional career in the software industry, gaining
+            practical experience, working on challenging projects, and
+            continuously developing my technical and professional skills.
+        </p>
+
+    </section>
+
+
+    <!-- ================= EDUCATION ================= -->
+
+    <section class="education" id="education">
+
+        <h1 class="section-title">
+            Education
+        </h1>
+
+        <div class="education-container">
+
+            <div class="education-card">
+
+                <h2>
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    BCA
+                </h2>
+
+                <p>
+                    <strong>2023 - 2026</strong>
+                </p>
+
+                <p>
+                    ST. Benedict's College,
+                    Passukkadavu
+                </p>
+
+            </div>
+
+
+            <div class="education-card">
+
+                <h2>
+                    <i class="fa-solid fa-school"></i>
+                    Plus Two
+                </h2>
+
+                <p>
+                    <strong>2021 - 2022</strong>
+                </p>
+
+                <p>
+                    Rahmaniya VHSS
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= EXPERIENCE ================= -->
+
+    <section class="experience" id="experience">
+
+        <h1 class="section-title">
+            Experience
+        </h1>
+
+        <div class="experience-container">
+
+            <div class="experience-image">
+
+                <img
+                    src="https://roadie.io/_next/image/?url=https:%2F%2Fimages.ctfassets.net%2Fhcqpbvoqhwhm%2FLVeoEAlIeMZ9zDgSf6Xxt%2Faa091785acf4bc2c26c8ccfe2436c3a4%2Fdeveloper-8829711_1920.jpg%3Fw%3D500%26h%3D500%26fm%3Dwebp&w=1080&q=75"
+                    alt="Software Developer">
+
+            </div>
+
+            <div class="experience-content">
+
+                <h2>
+                    Django AI / ML
+                </h2>
+
+                <h3>
+                    Regional 2026
+                </h3>
+
+                <p>
+                    Worked on projects involving Django,
+                    Artificial Intelligence and Machine Learning.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SKILLS ================= -->
+
+    <section class="skills" id="skills">
+
+        <h1 class="section-title">
+            Skills
+        </h1>
+
+        <div class="skills-container">
+
+
+            <!-- PYTHON -->
+
+            <div class="skill-card">
+
+                <i class="fa-brands fa-python python-icon"></i>
+
+                <h3>
+                    Python
+                </h3>
+
+            </div>
+
+
+            <!-- DJANGO -->
+
+            <div class="skill-card">
+
+                <i class="fa-solid fa-server django-icon"></i>
+
+                <h3>
+                    Django
+                </h3>
+
+            </div>
+
+
+            <!-- REACT -->
+
+            <div class="skill-card">
+
+                <i class="fa-brands fa-react react-icon"></i>
+
+                <h3>
+                    React.js
+                </h3>
+
+            </div>
+
+
+            <!-- MYSQL -->
+
+            <div class="skill-card">
+
+                <i class="fa-solid fa-database mysql-icon"></i>
+
+                <h3>
+                    MySQL
+                </h3>
+
+            </div>
+
+
+            <!-- AJAX -->
+
+            <div class="skill-card">
+
+                <i class="fa-solid fa-bolt ajax-icon"></i>
+
+                <h3>
+                    AJAX
+                </h3>
+
+            </div>
+
+
+            <!-- ARTIFICIAL INTELLIGENCE -->
+
+            <div class="skill-card">
+
+                <i class="fa-solid fa-robot ai-icon"></i>
+
+                <h3>
+                    Artificial Intelligence
+                </h3>
+
+            </div>
+
+
+            <!-- MACHINE LEARNING -->
+
+            <div class="skill-card">
+
+                <i class="fa-solid fa-brain ml-icon"></i>
+
+                <h3>
+                    Machine Learning
+                </h3>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © 2026 Hafis.K | Software Developer
+            <p>contact as +91-9567346618</p>
+        </p>
+
+    </footer>
+
+
+    <!-- Bootstrap JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+</body>
+
+</html>
+```
